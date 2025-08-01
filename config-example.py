@@ -6,3 +6,4 @@ TICKER_CACHE_FILE = "tickers_cache.txt"
 TICKER_SOURCE_URL = "https://raw.githubusercontent.com/rreichel3/US-Stock-Symbols/main/all/all_tickers.txt"
 CACHE_MAX_AGE = 30 * 24 * 60 * 60
 HEADERS = {"User-Agent": "TickerCheckerBot/1.0 (joe@bobjoe.com)"}
+UPTIME_KUMA_MONITOR_URL = "http://1.1.0.7:1/api/push/TSxs?status=up&msg=OK&ping="

@@ -17,7 +17,7 @@ import time
 import os
 import xml.etree.ElementTree as ET
 from urllib.parse import urljoin
-from config import FEED_URL, SLACK_WEBHOOK_URL, PROCESSED_LOG, TICKER_CACHE_FILE, TICKER_SOURCE_URL, CACHE_MAX_AGE, HEADERS
+from config import FEED_URL, SLACK_WEBHOOK_URL, PROCESSED_LOG, TICKER_CACHE_FILE, TICKER_SOURCE_URL, CACHE_MAX_AGE, HEADERS, UPTIME_KUMA_MONITOR_URL
 
 
 
@@ -180,6 +180,7 @@ def main():
             notify_slack(msg)
         else:
             print(f"   ✅ Proposed ticker: {proposed} — No close matches.\n")
+        requests.get(UPTIME_KUMA_MONITOR_URL)
 
 
 if __name__ == "__main__":
