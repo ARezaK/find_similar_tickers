@@ -7,10 +7,10 @@ RUN pip install uv && apt-get update && apt-get install -y curl
 WORKDIR /app
 
 # Copy script
-COPY s1_checker.py .
+COPY find_similar_ticker.py .
 
 # Make it executable
-RUN chmod +x s1_checker.py
+RUN chmod +x find_similar_ticker.py
 
 # Run every 24h
-CMD while true; do ./s1_checker.py; sleep 86400; done
+CMD while true; do ./find_similar_ticker.py; sleep 86400; done
