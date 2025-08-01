@@ -8,6 +8,7 @@ WORKDIR /app
 
 # Copy script
 COPY find_similar_ticker.py .
+COPY config.py .
 
 # Make it executable
 RUN chmod +x find_similar_ticker.py
