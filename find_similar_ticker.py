@@ -177,10 +177,10 @@ def main():
         if matches:
             msg = f"   ⚠️  Proposed ticker: {proposed} — Similar existing tickers: {matches}\n"
             print(f"   ⚠️  {msg}\n")
-            notify_slack(msg)
+            notify_slack(entry['title'] + msg)
+            requests.get(UPTIME_KUMA_MONITOR_URL)
         else:
             print(f"   ✅ Proposed ticker: {proposed} — No close matches.\n")
-        requests.get(UPTIME_KUMA_MONITOR_URL)
 
 
 if __name__ == "__main__":
